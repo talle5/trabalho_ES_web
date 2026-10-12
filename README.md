@@ -1,87 +1,73 @@
-# Welcome to React Router!
+# Trabalho ES - Frontend (React Router + Tailwind CSS)
 
-A modern, production-ready template for building full-stack React applications using React Router.
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+Estrutura limpa, direta e simplificada para desenvolvimento web em React Router e Tailwind CSS.
 
 ---
 
-Built with ❤️ using React Router.
+## 📁 Estrutura de Diretórios Simplificada
+
+```text
+trabalho_ES_web/
+├── app/
+│   ├── assets/              # Imagens, logotipos e ícones estáticos
+│   │   ├── logo-dark.svg
+│   │   └── logo-light.svg
+│   ├── components/          # Componentes visuais reutilizáveis
+│   │   ├── Button.tsx       # Botão personalizável
+│   │   └── Card.tsx         # Card com suporte a título e descrição
+│   ├── layouts/             # Estruturas e molduras de tela da aplicação
+│   │   ├── Navbar.tsx       # Barra de navegação do topo
+│   │   ├── Footer.tsx       # Rodapé
+│   │   └── MainLayout.tsx   # Layout principal (Navbar + Conteúdo + Footer)
+│   ├── pages/               # Telas / Páginas da aplicação
+│   │   └── home.tsx         # Página inicial
+│   ├── services/            # Comunicação com APIs e backend
+│   │   └── api.ts           # Cliente HTTP base (fetch com tratamento de erro)
+│   ├── utils/               # Funções utilitárias simples (ex: helper 'cn')
+│   │   └── index.ts
+│   ├── app.css              # Configurações de estilo global com Tailwind CSS
+│   ├── root.tsx             # Componente raiz da aplicação (HTML shell)
+│   └── routes.ts            # Registro e mapeamento das rotas
+├── public/                  # Arquivos estáticos servidos diretamente na raiz (ex: favicon)
+│   └── favicon.ico
+├── Dockerfile               # Configuração Docker
+├── package.json             # Dependências e scripts
+├── react-router.config.ts   # Configurações do React Router
+├── tsconfig.json            # Configuração do TypeScript e alias (~/*)
+└── vite.config.ts           # Configuração de build do Vite
+```
+
+---
+
+## 🎯 Onde colocar cada coisa?
+
+- **Quer criar uma nova página/tela?**
+  1. Crie o arquivo em `app/pages/minha-pagina.tsx`.
+  2. Registre a rota em `app/routes.ts`:
+     ```ts
+     route("minha-url", "pages/minha-pagina.tsx")
+     ```
+- **Quer alterar o menu ou rodapé?**
+  - Altere os arquivos dentro de `app/layouts/` (`Navbar.tsx`, `Footer.tsx`, `MainLayout.tsx`).
+- **Quer criar um botão, input, modal ou card reutilizável?**
+  - Crie dentro de `app/components/`.
+- **Quer adicionar imagens ou logos?**
+  - Coloque em `app/assets/` e importe usando `import logo from "~/assets/meu-logo.svg"`.
+- **Quer chamar uma API ou backend?**
+  - Use ou expanda o cliente em `app/services/api.ts`.
+
+---
+
+## 🚀 Como Executar
+
+```bash
+# Instalar dependências
+npm install
+
+# Rodar ambiente de desenvolvimento
+npm run dev
+
+# Checagem de tipos e compilação
+npm run typecheck
+npm run build
+```
