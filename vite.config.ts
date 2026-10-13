@@ -6,5 +6,12 @@ export default defineConfig({
   plugins: [tailwindcss(), reactRouter()],
   resolve: {
     tsconfigPaths: true,
+    alias: {
+      "@lineiconshq/free-icons": "@lineiconshq/free-icons/dist/index.esm.js",
+      "@lineiconshq/react-lineicons": "@lineiconshq/react-lineicons/dist/index.esm.js",
+    },
+  },
+  ssr: {
+    noExternal: ["@lineiconshq/free-icons", "@lineiconshq/react-lineicons"],
   },
 });
