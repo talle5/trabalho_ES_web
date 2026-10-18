@@ -1,0 +1,42 @@
+{
+  "name": "Trabalho ES Web - Codespaces",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+
+  // Instala as dependências automaticamente ao iniciar o Codespace
+  "postCreateCommand": "npm install",
+
+  // Portas encaminhadas para o navegador
+  "forwardPorts": [5173, 3000],
+
+  "portsAttributes": {
+    "5173": {
+      "label": "React Router / Vite Dev Server",
+      "onAutoForward": "openPreview"
+    },
+    "3000": {
+      "label": "Production Server",
+      "onAutoForward": "notify"
+    }
+  },
+
+  // Configurações e extensões do VS Code no Codespaces
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "js/ts.tsdk.path": "node_modules/typescript/lib",
+        "tailwindCSS.experimental.classRegex": [
+          ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+        ]
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "yoavbls.pretty-ts-errors",
+        "dsznajder.es7-react-js-snippets"
+      ]
+    }
+  }
+}
