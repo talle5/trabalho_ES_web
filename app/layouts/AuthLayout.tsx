@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router";
+import Logo from "../assets/Logo_1.svg";
 
 export function AuthLayout({ children }: { children: ReactNode }) {
   return (
@@ -7,9 +8,7 @@ export function AuthLayout({ children }: { children: ReactNode }) {
       <header className="flex items-center justify-between bg-white px-4 py-3 sm:px-8 sm:py-4">
         <Link to="/" aria-label="Saúde Digital" className="flex items-center gap-2">
           <span className="grid size-8 place-items-center rounded-md bg-[#005a9c]">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true">
-              <path d="M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z" />
-            </svg>
+            <img src={Logo} alt="Logo" />
           </span>
           <span className="text-xl font-bold tracking-tight text-[#005a9c]">
             Saúde Digital
