@@ -1,11 +1,10 @@
 import { MainLayout } from "~/layouts/MainLayout";
+import { PerfilAtendente } from "~/components/PerfilAtendente";
 
-export default function Home() {
+export default function Perfil() {
   return (
     <MainLayout>
-      <div>
-        
-      </div>
+      <PerfilAtendente />
     </MainLayout>
   );
 }
