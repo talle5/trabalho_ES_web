@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { useState } from "react";
 import { MainLayout } from "~/layouts/MainLayout";
 
@@ -14,6 +15,7 @@ export function meta() {
 }
 
 export default function Consulta() {
+  const navigate = useNavigate();
   const medico = {
     nome: "Dr. Carlos Eduardo",
     especialidade: "Clínico Geral",
@@ -86,7 +88,7 @@ export default function Consulta() {
     <MainLayout>
       <div className="flex flex-col gap-2">
         <div className="flex justify-end">
-          <button className="bg-[#005b96] rounded-2xl p-2.5 font-semibold min-w-72 text-white">Cadastrar nova consulta</button>
+          <button onClick={() => navigate("/consulta/nova")} className="bg-[#005b96] rounded-2xl p-2.5 font-semibold min-w-72 text-white">Cadastrar nova consulta</button>
         </div>
         <div className="w-full border border-[#d4d8e2] dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 overflow-hidden shadow-xs">
           <header className="flex justify-between p-5 font-bold text-[#434951] border-b border-[#d4d8e2] dark:border-gray-800 bg-[#f8f9fb] dark:bg-gray-950">
