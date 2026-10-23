@@ -5,6 +5,7 @@ export default [
   index("pages/home.tsx"),
 
   // 2. Novas páginas adicionadas com route("caminho-da-url", "arquivo-em-app"):
+  route("login", "pages/login.tsx"),           // Acessa em: /login
   route("fila", "pages/fila.tsx"),             // Acessa em: /fila
   route("consulta", "pages/consulta.tsx"),     // Acessa em: /consulta
   route("saidas", "pages/saidas.tsx"),         // Acessa em: /saidas
