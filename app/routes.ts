@@ -8,6 +8,7 @@ export default [
   route("login", "pages/login.tsx"),           // Acessa em: /login
   route("fila", "pages/fila.tsx"),             // Acessa em: /fila
   route("consulta", "pages/consulta.tsx"),     // Acessa em: /consulta
+  route("consulta/nova", "pages/nova-consulta.tsx"), // Acessa em: /consulta/nova
   route("saidas", "pages/saidas.tsx"),         // Acessa em: /saidas
   route("perfil", "pages/perfil.tsx"),         // Acessa em: /perfil
 ] satisfies RouteConfig;
