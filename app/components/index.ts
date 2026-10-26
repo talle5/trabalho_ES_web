@@ -9,3 +9,4 @@ export * from "./SecaoRecolhivel";
 export * from "./CampoTexto";
 export * from "./CampoSelect";
 export * from "./AvisoSucesso";
+export * from "./ListaSolicitacoes";
